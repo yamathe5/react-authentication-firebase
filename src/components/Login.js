@@ -7,7 +7,7 @@ export default function Login() {
   const emailRef = React.useRef()
   const passwordRef = React.useRef()
 
-  const {login, currentUser} = useAuth()
+  const { login } = useAuth()
   const [error, setError] = React.useState("")
   const [loading, setLoading] = React.useState(false)
   const navigate  = useNavigate()

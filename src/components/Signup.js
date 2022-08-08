@@ -9,7 +9,7 @@ export default function Signup() {
   const passwordRef = React.useRef()
   const passwordConfirmRef = React.useRef()
 
-  const {signup, currentUser} = useAuth()
+  const { signup } = useAuth()
   const [error, setError] = React.useState("")
   const [loading, setLoading] = React.useState(false)
   const navigate  = useNavigate()

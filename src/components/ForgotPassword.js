@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, Button, Card, Alert } from "react-bootstrap"
 import { useAuth } from '../context/AuthContext'
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 export default function ForgotPassword() {
   const emailRef = React.useRef()
