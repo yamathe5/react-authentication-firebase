@@ -5,18 +5,6 @@ import { Navigate, Outlet } from 'react-router-dom';
 
 
 export default function PrivateRoute() {
-  // const navigate = useNavigate()
-  console.log(Component, rest)
-
   const { currentUser } = useAuth()
   return currentUser ? <Outlet /> : <Navigate to="/login" />;
-    // <Route 
-    //   {...rest}
-    //   render={props=>{
-    //     return currentUser? <Component {...props}/> : <Redirect to="/login">
-    //   }}
-    // >
-      
-    // </Route>
-  
 }
