@@ -7,6 +7,7 @@ import Login from "./components/Login"
 import PrivateRoute from "./components/PrivateRoute"
 import ForgotPassword from "./components/ForgotPassword"
 import UpdateProfile from "./components/UpdateProfile"
+import UserPrivateRoute from "./components/UserPrivateRoute"
 
 function App() {
   return (
@@ -21,14 +22,23 @@ function App() {
               <Route exact path='/' element={<PrivateRoute/>}>
                 <Route exact path='/' element={<Dashboard/>}/>
               </Route>
-
-              <Route exact path='/update-profile' element={<PrivateRoute/>}>
-                <Route exact path='/update-profile' element={<UpdateProfile/>}/>
+              <Route path='/update-profile' element={<PrivateRoute/>}>
+                <Route path='/update-profile' element={<UpdateProfile/>}/>
               </Route>
 
-              <Route path="/signup" element={<Signup/>} />
-              <Route path="/login" element={<Login/>} />
-              <Route path="/forgot-password" element={<ForgotPassword/>} />
+              <Route path='/signup' element={<UserPrivateRoute/>}>
+                <Route path='/signup' element={<Signup/>}/>
+              </Route>
+              <Route path='/login' element={<UserPrivateRoute/>}>
+                <Route path='/login' element={<Login/>}/>
+              </Route>
+              <Route path='/forgot-password' element={<UserPrivateRoute/>}>
+                <Route path='/forgot-password' element={<ForgotPassword/>}/>
+              </Route>
+
+              {/* <Route path="/signup" element={<Signup/>} /> */}
+              {/* <Route path="/login" element={<Login/>} /> */}
+              {/* <Route path="/forgot-password" element={<ForgotPassword/>} /> */}
             </Routes>
           </AuthProvider>
         </Router>
